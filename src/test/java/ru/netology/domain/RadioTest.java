@@ -15,39 +15,39 @@ class RadioTest {
 
     @Test
     @Order(1)
-    void shouldIncreaseCurrentTemperature() {
+    void shouldIncreaseCurrentRadioStation() {
         radio.setCurrentRadioStation(8);
         radio.increaseCurrentRadioStation(radio.getCurrentRadioStation());
         assertEquals(9, radio.getCurrentRadioStation());
     }
     @Test
     @Order(2)
-    void shouldIncreaseCurrentTemperature2() {
+    void shouldIncreaseCurrentRadioStation2() {
         radio.increaseCurrentRadioStation(radio.getCurrentRadioStation());
         assertEquals(0, radio.getCurrentRadioStation());
     }
     @Test
     @Order(3)
-    void shouldIncreaseCurrentTemperature3() {
+    void shouldIncreaseCurrentRadioStation3() {
         radio.increaseCurrentRadioStation(radio.getCurrentRadioStation());
         assertEquals(1, radio.getCurrentRadioStation());
     }
     @Test
     @Order(4)
-    void shouldDecreaseCurrentTemperature() {
+    void shouldDecreaseCurrentRadioStation() {
         radio.setCurrentRadioStation(1);
         radio.decreaseCurrentRadioStation(radio.getCurrentRadioStation());
         assertEquals(0, radio.getCurrentRadioStation());
     }
     @Test
     @Order(5)
-    void shouldDecreaseCurrentTemperature2() {
+    void shouldDecreaseCurrentRadioStation2() {
         radio.decreaseCurrentRadioStation(radio.getCurrentRadioStation());
         assertEquals(9, radio.getCurrentRadioStation());
     }
     @Test
     @Order(6)
-    void shouldDecreaseCurrentTemperature3() {
+    void shouldDecreaseCurrentRadioStation3() {
         radio.decreaseCurrentRadioStation(radio.getCurrentRadioStation());
         assertEquals(8, radio.getCurrentRadioStation());
     }
