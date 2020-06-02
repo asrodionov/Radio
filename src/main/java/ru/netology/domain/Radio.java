@@ -4,10 +4,26 @@ public class Radio {
 
     private int currentRadioStation;
     private int currentSoundVolume;
-    private int maxRadioStation = 9;
+    private int maxRadioStation = 10;
     private int minRadioStation = 0;
-    private int maxSoundVolume = 10;
+    private int maxSoundVolume = 100;
     private int minSoundVolume = 0;
+
+    public int getCurrentRadioStation() {
+        return currentRadioStation;
+    }
+
+    public void setCurrentRadioStation(int currentRadioStation) {
+        this.currentRadioStation = currentRadioStation;
+    }
+
+    public int getCurrentSoundVolume() {
+        return currentSoundVolume;
+    }
+
+    public void setCurrentSoundVolume(int currentSoundVolume) {
+        this.currentSoundVolume = currentSoundVolume;
+    }
 
     public int getMaxRadioStation() {
         return maxRadioStation;
@@ -25,20 +41,40 @@ public class Radio {
         this.minRadioStation = minRadioStation;
     }
 
-    public int getCurrentRadioStation() {
-        return currentRadioStation;
+    public int getMaxSoundVolume() {
+        return maxSoundVolume;
     }
 
-    public void setCurrentRadioStation(int currentRadioStation) {
+    public void setMaxSoundVolume(int maxSoundVolume) {
+        this.maxSoundVolume = maxSoundVolume;
+    }
+
+    public int getMinSoundVolume() {
+        return minSoundVolume;
+    }
+
+    public void setMinSoundVolume(int minSoundVolume) {
+        this.minSoundVolume = minSoundVolume;
+    }
+
+    public Radio(int currentRadioStation, int currentSoundVolume, int maxRadioStation, int minRadioStation, int maxSoundVolume, int minSoundVolume) {
         this.currentRadioStation = currentRadioStation;
-    }
-
-    public int getCurrentSoundVolume() {
-        return currentSoundVolume;
-    }
-
-    public void setCurrentSoundVolume(int currentSoundVolume) {
         this.currentSoundVolume = currentSoundVolume;
+        this.maxRadioStation = maxRadioStation;
+        this.minRadioStation = minRadioStation;
+        this.maxSoundVolume = maxSoundVolume;
+        this.minSoundVolume = minSoundVolume;
+    }
+
+    public Radio() {
+    }
+
+    public void setRadioStationInConsole(){
+        if (currentRadioStation > maxRadioStation){
+            this.currentRadioStation = maxRadioStation;
+            return;
+        }
+        this.currentRadioStation = currentRadioStation;
     }
 
     public void increaseCurrentRadioStation() {
