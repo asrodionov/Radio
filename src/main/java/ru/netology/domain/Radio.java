@@ -1,5 +1,13 @@
 package ru.netology.domain;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+
 public class Radio {
 
     private int currentRadioStation;
@@ -9,68 +17,9 @@ public class Radio {
     private int maxSoundVolume = 100;
     private int minSoundVolume = 0;
 
-    public int getCurrentRadioStation() {
-        return currentRadioStation;
-    }
 
-    public void setCurrentRadioStation(int currentRadioStation) {
-        this.currentRadioStation = currentRadioStation;
-    }
-
-    public int getCurrentSoundVolume() {
-        return currentSoundVolume;
-    }
-
-    public void setCurrentSoundVolume(int currentSoundVolume) {
-        this.currentSoundVolume = currentSoundVolume;
-    }
-
-    public int getMaxRadioStation() {
-        return maxRadioStation;
-    }
-
-    public void setMaxRadioStation(int maxRadioStation) {
-        this.maxRadioStation = maxRadioStation;
-    }
-
-    public int getMinRadioStation() {
-        return minRadioStation;
-    }
-
-    public void setMinRadioStation(int minRadioStation) {
-        this.minRadioStation = minRadioStation;
-    }
-
-    public int getMaxSoundVolume() {
-        return maxSoundVolume;
-    }
-
-    public void setMaxSoundVolume(int maxSoundVolume) {
-        this.maxSoundVolume = maxSoundVolume;
-    }
-
-    public int getMinSoundVolume() {
-        return minSoundVolume;
-    }
-
-    public void setMinSoundVolume(int minSoundVolume) {
-        this.minSoundVolume = minSoundVolume;
-    }
-
-    public Radio(int currentRadioStation, int currentSoundVolume, int maxRadioStation, int minRadioStation, int maxSoundVolume, int minSoundVolume) {
-        this.currentRadioStation = currentRadioStation;
-        this.currentSoundVolume = currentSoundVolume;
-        this.maxRadioStation = maxRadioStation;
-        this.minRadioStation = minRadioStation;
-        this.maxSoundVolume = maxSoundVolume;
-        this.minSoundVolume = minSoundVolume;
-    }
-
-    public Radio() {
-    }
-
-    public void setRadioStationInConsole(){
-        if (currentRadioStation > maxRadioStation){
+    public void setRadioStationInConsole() {
+        if (currentRadioStation > maxRadioStation) {
             this.currentRadioStation = maxRadioStation;
             return;
         }
