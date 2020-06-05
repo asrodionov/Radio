@@ -1,44 +1,33 @@
 package ru.netology.domain;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+
 public class Radio {
 
     private int currentRadioStation;
     private int currentSoundVolume;
-    private int maxRadioStation = 9;
+    private int maxRadioStation = 10;
     private int minRadioStation = 0;
-    private int maxSoundVolume = 10;
+    private int maxSoundVolume = 100;
     private int minSoundVolume = 0;
 
-    public int getMaxRadioStation() {
-        return maxRadioStation;
-    }
 
-    public void setMaxRadioStation(int maxRadioStation) {
-        this.maxRadioStation = maxRadioStation;
-    }
-
-    public int getMinRadioStation() {
-        return minRadioStation;
-    }
-
-    public void setMinRadioStation(int minRadioStation) {
-        this.minRadioStation = minRadioStation;
-    }
-
-    public int getCurrentRadioStation() {
-        return currentRadioStation;
-    }
-
-    public void setCurrentRadioStation(int currentRadioStation) {
+    public void setRadioStationInConsole(int currentRadioStation) {
+        if (currentRadioStation > maxRadioStation) {
+            this.currentRadioStation = 0;
+            return;
+        }
+        if (currentRadioStation < minRadioStation) {
+            this.currentRadioStation = 0;
+            return;
+        }
         this.currentRadioStation = currentRadioStation;
-    }
-
-    public int getCurrentSoundVolume() {
-        return currentSoundVolume;
-    }
-
-    public void setCurrentSoundVolume(int currentSoundVolume) {
-        this.currentSoundVolume = currentSoundVolume;
     }
 
     public void increaseCurrentRadioStation() {
