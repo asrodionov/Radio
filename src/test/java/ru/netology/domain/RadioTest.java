@@ -13,6 +13,27 @@ class RadioTest {
     }
 
     @Test
+    void shouldCurrentRadioStation() {
+        Radio radio = new Radio(15);
+        radio.setCurrentRadioStation(10);
+        assertEquals(10, radio.getCurrentRadioStation());
+    }
+
+    @Test
+    void shouldCurrentRadioStation2() {
+        Radio radio = new Radio(15);
+        radio.setCurrentRadioStation(16);
+        assertEquals(0, radio.getCurrentRadioStation());
+    }
+
+    @Test
+    void shouldCurrentRadioStation3() {
+        Radio radio = new Radio(15);
+        radio.setCurrentRadioStation(-1);
+        assertEquals(0, radio.getCurrentRadioStation());
+    }
+
+    @Test
     void shouldIncreaseCurrentRadioStation() {
         Radio radio = new Radio(14,50,15);
         radio.increaseCurrentRadioStation();
@@ -57,8 +78,30 @@ class RadioTest {
     void shouldDSetCurrentRadioStationInConsole2() {
         Radio radio = new Radio(55,50,15);
         radio.setRadioStationInConsole();
-        assertEquals(15, radio.getCurrentRadioStation());
+        assertEquals(0, radio.getCurrentRadioStation());
     }
+
+    @Test
+    void shouldCurrentSoundVolume() {
+        Radio radio = new Radio(15);
+        radio.setCurrentSoundVolume(50);
+        assertEquals(50, radio.getCurrentSoundVolume());
+    }
+
+    @Test
+    void shouldCurrentSoundVolume2() {
+        Radio radio = new Radio(15);
+        radio.setCurrentSoundVolume(110);
+        assertEquals(0, radio.getCurrentSoundVolume());
+    }
+
+    @Test
+    void shouldCurrentSoundVolume3() {
+        Radio radio = new Radio(15);
+        radio.setCurrentSoundVolume(-5);
+        assertEquals(0, radio.getCurrentSoundVolume());
+    }
+
 
     @Test
     void shouldIncreaseCurrentSoundVolume() {

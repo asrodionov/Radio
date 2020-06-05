@@ -97,7 +97,7 @@ public class Radio {
 
     public void setRadioStationInConsole(){
         if (currentRadioStation > maxRadioStation){
-            this.currentRadioStation = maxRadioStation;
+            currentRadioStation = 0;
             return;
         }
         this.currentRadioStation = currentRadioStation;
