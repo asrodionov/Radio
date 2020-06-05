@@ -50,8 +50,7 @@ class RadioTest {
     void shouldDSetRadioStationInConsole() {
         Radio radio = new Radio();
         radio.setMaxRadioStation(15);
-        radio.setCurrentRadioStation(10);
-        radio.setRadioStationInConsole();
+        radio.setRadioStationInConsole(10);
         assertEquals(10, radio.getCurrentRadioStation());
     }
 
@@ -59,9 +58,16 @@ class RadioTest {
     void shouldDSetCurrentRadioStationInConsole2() {
         Radio radio = new Radio();
         radio.setMaxRadioStation(15);
-        radio.setCurrentRadioStation(55);
-        radio.setRadioStationInConsole();
-        assertEquals(15, radio.getCurrentRadioStation());
+        radio.setRadioStationInConsole(55);
+        assertEquals(0, radio.getCurrentRadioStation());
+    }
+
+    @Test
+    void shouldDSetCurrentRadioStationInConsole3() {
+        Radio radio = new Radio();
+        radio.setMaxRadioStation(15);
+        radio.setRadioStationInConsole(-5);
+        assertEquals(0, radio.getCurrentRadioStation());
     }
 
     @Test

@@ -18,9 +18,13 @@ public class Radio {
     private int minSoundVolume = 0;
 
 
-    public void setRadioStationInConsole() {
+    public void setRadioStationInConsole(int currentRadioStation) {
         if (currentRadioStation > maxRadioStation) {
-            this.currentRadioStation = maxRadioStation;
+            this.currentRadioStation = 0;
+            return;
+        }
+        if (currentRadioStation < minRadioStation) {
+            this.currentRadioStation = 0;
             return;
         }
         this.currentRadioStation = currentRadioStation;
